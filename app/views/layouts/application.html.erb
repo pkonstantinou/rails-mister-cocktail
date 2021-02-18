@@ -23,14 +23,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Add a cocktail</a>
+            <%= link_to 'Add a cocktail', new_cocktail_path , class: "nav-link" %>
           </li>
         </ul>
       </div>
     </div>
 
-    <div class="container mt-5">
-      <%= yield %>
-    </div>
+    <%= yield %>
+
   </body>
 </html>
