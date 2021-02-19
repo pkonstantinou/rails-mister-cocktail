@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'pry'
+gem 'pry-rails'
 gem 'simple_form'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -40,7 +42,6 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.2'
-  gem 'pry'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
