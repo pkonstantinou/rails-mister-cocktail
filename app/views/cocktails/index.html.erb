@@ -1,15 +1,22 @@
-<div class="container mt-5">
+<div class="container cocktails-container">
   <h1 class="text-center mb-5">Cocktails</h1>
   <div class="cocktails row justify-content-around">
     <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail_path(cocktail), class: 'unstyled-link' do %>
-      <div class="card mb-5" style="width: 18rem;">
-        <img src="<%= cocktail.image_url %>" class="card-img-top" alt="<%= cocktail.name %>">
-        <div class="card-body">
-          <h5 class="card-title text-center"><%= cocktail.name %></h5>
-        </div>
+    <div class="cocktail-card card mb-5" style="width: 18rem;">
+      <%= link_to cocktail_path(cocktail) do %>
+      <div class="cocktail-card__image">
+        <%= cl_image_tag cocktail.photo.key, class: 'card-img-top' %>
       </div>
       <% end %>
+      <div class="card-body cocktail-card__body">
+      <%= link_to cocktail_path(cocktail) do %>
+        <h5 class="card-title text-center"><%= cocktail.name %></h5>
+      <% end %>
+      <%= link_to cocktail_path(cocktail), method: :delete, data: {confirm: 'Are you sure?'} do %>
+        <i class="fas fa-trash delete-icon cocktail-card__body__btn-delete"></i>
+      <% end %>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

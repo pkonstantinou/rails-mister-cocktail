@@ -20,9 +20,17 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.photo.purge if @cocktail.photo.attached?
+    @cocktail.destroy
+
+    redirect_to cocktails_path
+  end
+
   private
 
   def cocktail_params
-    params[:cocktail].permit(:name, :image_url)
+    params[:cocktail].permit(:name, :photo)
   end
 end
