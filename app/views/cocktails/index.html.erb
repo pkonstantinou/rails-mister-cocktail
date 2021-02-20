@@ -5,7 +5,9 @@
     <div class="cocktail-card card mb-5" style="width: 18rem;">
       <%= link_to cocktail_path(cocktail) do %>
       <div class="cocktail-card__image">
-        <%= cl_image_tag cocktail.photo.key, class: 'card-img-top' %>
+        <% if cocktail.photo.attached? %>
+          <%= cl_image_tag cocktail.photo.key, class: 'card-img-top' %>
+        <% end %>
       </div>
       <% end %>
       <div class="card-body cocktail-card__body">
