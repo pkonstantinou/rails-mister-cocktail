@@ -16,3 +16,9 @@ require("channels");
 // const imagePath = (name) => images(name, true)
 
 import "bootstrap";
+import "../plugins/init_select2";
+import { initSelect2 } from "../plugins/init_select2";
+
+document.addEventListener("turbolinks:load", () => {
+  initSelect2();
+});
